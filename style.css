@@ -21,6 +21,7 @@ body {
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ─────────── NAV ─────────── */
@@ -209,7 +210,7 @@ section {
   font-size: 15px;
   padding: 13px 26px;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -218,7 +219,7 @@ section {
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
 .btn-secondary:hover {
-  border-color: rgba(255,255,255,0.22);
+  border-color: rgba(255, 255, 255, 0.45);
   background: rgba(255,255,255,0.04);
   transform: translateY(-2px);
 }
@@ -337,7 +338,7 @@ section {
 
 .feature {
   display: flex;
-  align-items:flex-start;
+  align-items: center;
   gap: 18px;
 }
 
@@ -874,6 +875,7 @@ section {
 backdrop-filter: blur(10px); }
   .logo { display: none; }
   .nav-links { display: flex;
+  flex: 1;
   gap: 15px;
    overflow-x:auto;
   padding:0 10px;
@@ -898,6 +900,7 @@ scrollbar-width: none;/*hide scrollbar for firefox*/
   }
 
   .features-section {
+    padding: 60px 24px;
     align-items: flex-start;
   }
 
