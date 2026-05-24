@@ -29,7 +29,7 @@ body {
 nav {
   display: flex;
   align-items: center;
-  padding: 24px 60px; /* Default padding */
+  padding: 24px clamp(24px, 5vw, 60px); /* Fluid horizontal padding for desktop nav */
   position: fixed; /* Keeps the nav visible */
   top: 0;
   left: 0;
@@ -57,6 +57,10 @@ nav {
     content: '';
     flex: 1;
   }
+  .hero-content { max-width: 1000px; }
+  .about-grid > div:first-child p, .contact-desc {
+    max-width: 600px;
+  }
 }
 
 .nav-links {
@@ -83,6 +87,8 @@ section {
   align-items: center;
   scroll-snap-align: start; 
   padding: 80px 60px;
+  max-width: 1400px;
+  margin-inline: auto;
   border-top: 1px solid var(--border);
   overflow: hidden;
 }
@@ -109,7 +115,7 @@ section {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  /* max-width is now handled by the media query above for desktop */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -320,6 +326,8 @@ section {
   gap: 40px;
   width: 100%;
   max-width: 1200px;
+  width: 100%; /* Ensure it takes full width within its parent */
+  max-width: 100%; /* Remove explicit max-width here, let section handle it */
   margin: 0 auto;
 }
 
@@ -453,6 +461,7 @@ section {
   line-height: 1.85;
   color: rgba(255,255,255,0.48);
   margin-bottom: 18px;
+  margin-bottom: 24px; /* Slightly more space */
   max-width: 480px;
   margin-inline: auto;
 }
@@ -473,6 +482,7 @@ section {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   max-width: 500px;
+  /* max-width is now handled by the media query above for desktop */
   width:100%;
 }
 
@@ -900,7 +910,7 @@ scrollbar-width: none;/*hide scrollbar for firefox*/
 
   .projects-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
   }
 
@@ -1351,6 +1361,7 @@ scrollbar-width: none;/*hide scrollbar for firefox*/
   line-height: 1.75;
   color: rgba(255,255,255,0.45);
   margin-bottom: 28px;
+  margin-bottom: 32px; /* Slightly more space */
   max-width: 400px;
 }
 
