@@ -872,6 +872,7 @@ section {
   nav { padding: 12px 20px;
   background: rgba(8, 14, 12, 0.95);
 backdrop-filter: blur(10px); }
+  .logo { display: none; }
   .nav-links { display: flex;
   gap: 15px;
    overflow-x:auto;
@@ -890,10 +891,21 @@ scrollbar-width: none;/*hide scrollbar for firefox*/
   .hero::after { display: none; }
   .hero-right { display: none; }
 
+  .stack-pills {
+    justify-content: center;
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .features-section {
+    align-items: flex-start;
+  }
+
   .features {
     grid-template-columns: 1fr;
     padding: 40px 24px 60px;
     gap: 32px;
+    margin-inline: 0;
   }
   .feature + .feature {
     border-left: none;
