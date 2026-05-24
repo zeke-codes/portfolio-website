@@ -158,16 +158,28 @@ section {
   margin-bottom: 16px;
 }
 .hero-name span { display: inline-block; }
-.hero-name .first, 
-.hero-name .last { 
-  color: var(--green); 
-  /* Layered shadows create a much more visible "high-end" glow */
-  text-shadow: 
-    0 0 10px rgba(0, 232, 122, 0.5),
-    0 0 25px rgba(0, 232, 122, 0.3),
-    0 0 50px rgba(0, 232, 122, 0.1);
+.hero-name .first,
+.hero-name .last {
+  color: var(--white);
+  text-shadow: none;
+  color: var(--green);
+  /* Tighter, lower intensity glow to keep text crisp */
+  text-shadow: 0 0 8px rgba(0, 232, 122, 0.3);
 }
+/*.hero-name .last::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 4px;
+  background: var(--green);
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 4px;
+  animation: cursor-blink 1s step-end infinite;
+}*/
 .hero-name .first { margin-right: 12px; }
+
+
 
 .hero-desc {
   font-size: 14.5px;
