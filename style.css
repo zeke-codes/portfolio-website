@@ -166,17 +166,7 @@ section {
   /* Tighter, lower intensity glow to keep text crisp */
   text-shadow: 0 0 8px rgba(0, 232, 122, 0.3);
 }
-/*.hero-name .last::after {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 4px;
-  background: var(--green);
-  margin-left: 10px;
-  vertical-align: middle;
-  border-radius: 4px;
-  animation: cursor-blink 1s step-end infinite;
-}*/
+
 .hero-name .first { margin-right: 12px; }
 
 
