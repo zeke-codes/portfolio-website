@@ -570,11 +570,16 @@ section {
 
 .projects-title span { color: var(--green); }
 
-/* ── both cards side by side ── */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ── card base ── */
@@ -612,12 +617,12 @@ section {
   width: 100%;
   flex-shrink: 0;
   background: rgba(0,0,0,0.35);
-  min-height: 140px; /* Reduced height for better fit */
+  min-height: 130px; 
   overflow: hidden;
 }
 
 .project-preview--sm {
-  min-height: 160px;
+  min-height: 130px;
 }
 
 .project-preview-glow {
