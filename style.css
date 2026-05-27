@@ -882,8 +882,8 @@ scrollbar-width: none;/*hide scrollbar for firefox*/
     margin-inline: auto;
   }
 
-  /* Ensures the 4th item (Supabase) wraps and centers perfectly */
-  .stack-pills .pill:nth-child(4) {
+  /* Ensures items on the second row (React/Supabase) wrap and center perfectly */
+  .stack-pills .pill:nth-child(n+4) {
     flex-basis: auto;
   }
 
