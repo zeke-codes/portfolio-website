@@ -747,6 +747,113 @@ section {
   border: 1px solid rgba(255,255,255,0.07);
 }
 
+/* world cup predictor mockup */
+.project-preview-glow--worldcup {
+  background:
+    radial-gradient(ellipse at 25% 35%, rgba(0,232,122,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, rgba(255,69,69,0.12) 0%, transparent 60%);
+}
+
+.worldcup-mock {
+  gap: 8px;
+}
+
+.prediction-match {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+}
+
+.team-pick {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 48px;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.team-pick:last-child {
+  justify-content: flex-end;
+}
+
+.team-flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.team-flag--green {
+  background: linear-gradient(90deg, #009b3a 0 35%, #fcd116 35% 68%, #00a3dd 68%);
+}
+
+.team-flag--red {
+  background: linear-gradient(90deg, #c8102e 0 35%, #fff 35% 68%, #006847 68%);
+}
+
+.match-vs {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.32);
+}
+
+.prediction-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.prediction-stats div {
+  padding: 8px 10px;
+  background: rgba(0,232,122,0.06);
+  border: 1px solid rgba(0,232,122,0.12);
+  border-radius: 8px;
+}
+
+.stat-value,
+.stat-label {
+  display: block;
+}
+
+.stat-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.stat-label {
+  margin-top: 2px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.32);
+}
+
+.leaderboard-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.leaderboard-lines span {
+  display: block;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+}
+
+.leaderboard-lines span:nth-child(1) { width: 88%; }
+.leaderboard-lines span:nth-child(2) { width: 72%; }
+.leaderboard-lines span:nth-child(3) { width: 58%; }
+
 /* ── project info ── */
 .project-info {
   padding: 18px 22px; /* Tighter internal padding */
