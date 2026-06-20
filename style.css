@@ -25,6 +25,19 @@ body {
   width: 100%;
 }
 
+/* ─────────── SCROLL PROGRESS BAR ─────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), rgba(0, 232, 122, 0.5));
+  width: 0%;
+  z-index: 1001;
+  box-shadow: 0 0 15px rgba(0, 232, 122, 0.6);
+  transition: width 0.1s ease;
+}
+
 /* ─────────── NAV ─────────── */
 nav {
   display: flex;
@@ -77,6 +90,13 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
+
+/* ─────────── ROTATING TEXT ─────────── */
+.rotating-text {
+  color: var(--green);
+  display: inline-block;
+  min-width: 200px;
+}
 
 /* Generic Section Centering */
 section {

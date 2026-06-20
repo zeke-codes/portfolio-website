@@ -1,13 +1,56 @@
 /* ─────────────────────────────────────
    PORTFOLIO JAVASCRIPT
-   1. Navbar background on scroll
-   2. Active nav link on scroll
-   3. Smooth scroll
-   4. Fade-in on scroll
-   5. Form feedback
+   1. Scroll progress bar
+   2. Rotating text in hero
+   3. Navbar background on scroll
+   4. Active nav link on scroll
+   5. Smooth scroll
+   6. Fade-in on scroll
+   7. Form feedback
 ───────────────────────────────────────*/
 
-/* ── 1. NAVBAR BACKGROUND ON SCROLL ── */
+/* ── 1. ROTATING TEXT IN HERO ── */
+const rotatingTexts = ['Ezekiel', 'a web developer', 'a designer', 'a problem solver'];
+let currentIndex = 0;
+const rotatingElement = document.querySelector('.rotating-text');
+
+function typeText(text, callback) {
+  rotatingElement.textContent = '';
+  let charIndex = 0;
+  
+  function type() {
+    if (charIndex < text.length) {
+      rotatingElement.textContent += text[charIndex];
+      charIndex++;
+      setTimeout(type, 100); /* Speed of typing - 100ms per character */
+    } else {
+      setTimeout(callback, 2000); /* Wait 2 seconds before next word */
+    }
+  }
+  
+  type();
+}
+
+function rotateText() {
+  currentIndex = (currentIndex + 1) % rotatingTexts.length;
+  typeText(rotatingTexts[currentIndex], rotateText);
+}
+
+/* Start with first text */
+if (rotatingElement) {
+  typeText(rotatingTexts[currentIndex], rotateText);
+}
+
+/* ── 1. SCROLL PROGRESS BAR ── */
+const scrollProgress = document.querySelector('.scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (window.scrollY / scrollHeight) * 100;
+  scrollProgress.style.width = scrolled + '%';
+});
+
+/* ── 2. NAVBAR BACKGROUND ON SCROLL ── */
 const nav = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
@@ -24,7 +67,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ── 2. ACTIVE NAV LINK ON SCROLL ── */
+/* ── 3. ACTIVE NAV LINK ON SCROLL ── */
 const sections = document.querySelectorAll('section[id], div[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -50,7 +93,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => sectionObserver.observe(section));
 
 
-/* ── 3. SMOOTH SCROLL ── */
+/* ── 4. SMOOTH SCROLL ── */
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -77,7 +120,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-/* ── 4. FADE-IN ON SCROLL ── */
+/* ── 5. FADE-IN ON SCROLL ── */
 const fadeElements = document.querySelectorAll(
   'section > div, .project-card, .service-card, .blog-card'
 );
