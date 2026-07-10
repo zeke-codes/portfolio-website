@@ -2,6 +2,20 @@ const scrollProgress = document.querySelector('.scroll-progress');
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 const sections = document.querySelectorAll('main section[id]');
 const fadeElements = document.querySelectorAll('.fade-in');
+const root = document.documentElement;
+
+function updatePointerGlow(event) {
+  const x = (event.clientX / window.innerWidth) * 100;
+  const y = (event.clientY / window.innerHeight) * 100;
+  root.style.setProperty('--pointer-x', `${x}%`);
+  root.style.setProperty('--pointer-y', `${y}%`);
+}
+
+window.addEventListener('pointermove', updatePointerGlow, { passive: true });
+window.addEventListener('pointerleave', () => {
+  root.style.setProperty('--pointer-x', '50%');
+  root.style.setProperty('--pointer-y', '50%');
+}, { passive: true });
 
 function updateProgress() {
   const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
