@@ -347,12 +347,18 @@ h3 {
 }
 
 .project-grid {
-  grid-template-columns: 1.1fr 0.9fr 0.9fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .project-card.featured {
-  grid-column: span 1;
+  grid-column: span 2;
   min-height: 100%;
+}
+
+@media (max-width: 760px) {
+  .project-card.featured {
+    grid-column: span 1;
+  }
 }
 
 .project-card {
